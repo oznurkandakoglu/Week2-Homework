@@ -17,35 +17,26 @@ public class EstateService {
 
     // Created get total price by type functions and return total price by type
     public double getTotalPriceByType(String type) {
-        double totalPrice = 0;
-        totalPrice += estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getPrice()).sum();
-        return totalPrice;
+        return estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getPrice()).sum();
     }
 
     // Created get total price functions and return total price
     public double getTotalPrice() {
-        double totalPrice = 0;
-        totalPrice += estateList.stream().mapToDouble(estate -> estate.getPrice()).sum();
-        return totalPrice;
+        return estateList.stream().mapToDouble(estate -> estate.getPrice()).sum();
     }
 
     // Created get average area by type functions and return total area by type
     public double getAverageAreaByType(String type) {
-        double totalArea = 0;
-        totalArea = estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getArea()).sum();
-        return totalArea / estateList.stream().filter(estate -> estate.getType() == type).count();
+        return estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getArea()).sum() / estateList.stream().filter(estate -> estate.getType() == type).count();
     }
 
     // Created get average area functions and return total area
     public double getAverageArea() {
-        double totalArea = 0;
-        totalArea = estateList.stream().mapToDouble(estate -> estate.getArea()).sum();
-        return totalArea / estateList.size() ;
+        return estateList.stream().mapToDouble(estate -> estate.getArea()).sum() / estateList.size() ;
     }
 
     // Created filter by room and living room functions and return filtered house
     public <T extends Estate>List<T> filterByRoomAndLivingRoom(List<T> houses, int roomCount, int livingRoomCount) {
-
         return houses.stream().filter(response -> response.getRoomCount() == roomCount && response.getLivingRoomCount() == livingRoomCount).toList();
     }
 }
