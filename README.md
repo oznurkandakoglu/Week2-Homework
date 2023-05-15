@@ -17,4 +17,5 @@
 ### Output
 
 
-<img width="427" alt="Ekran Resmi 2023-05-15 21 33 24" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/e4c7302c-faa0-4278-851b-f239d8b070d5">
+<img width="406" alt="Ekran Resmi 2023-05-15 21 35 59" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/1db58035-9b5d-45b8-bf35-a297ba5efebb">
+
