@@ -25,7 +25,7 @@ public class UI {
         List<Estate> filteredHouses = estateService.filterByRoomAndLivingRoom(estateList,4, 2);
         System.out.println("Houses with 4 rooms and 2 living rooms:");
         for (Estate estate : filteredHouses) {
-            System.out.println(estate.getType() + " - $" + estate.getPrice() + " - " + estate.getArea() + " square meters");
+            System.out.println(estate.getType() + " : $" + estate.getPrice() + " - " + estate.getArea() + " square meters");
         }
     }
 }
