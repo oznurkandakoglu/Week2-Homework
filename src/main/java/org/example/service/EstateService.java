@@ -18,43 +18,28 @@ public class EstateService {
     // Created get total price by type functions and return total price by type
     public double getTotalPriceByType(String type) {
         double totalPrice = 0;
-
-        for(Estate estate : estateList){
-            if(estate.getType().equals(type)){
-                totalPrice += estate.getPrice();
-            }
-        }
+        totalPrice += estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getPrice()).sum();
         return totalPrice;
     }
 
     // Created get total price functions and return total price
     public double getTotalPrice() {
         double totalPrice = 0;
-        for (Estate estate : estateList) {
-            totalPrice += estate.getPrice();
-        }
+        totalPrice += estateList.stream().mapToDouble(estate -> estate.getPrice()).sum();
         return totalPrice;
     }
 
     // Created get average area by type functions and return total area by type
     public double getAverageAreaByType(String type) {
         double totalArea = 0;
-        int count = 0;
-        for (Estate estate : estateList) {
-            if (estate.getType().equals(type)) {
-                totalArea += estate.getArea();
-                count++;
-            }
-        }
-        return totalArea / count;
+        totalArea = estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getArea()).sum();
+        return totalArea / estateList.stream().filter(estate -> estate.getType() == type).count();
     }
 
     // Created get average area functions and return total area
     public double getAverageArea() {
         double totalArea = 0;
-        for (Estate estate : estateList) {
-            totalArea += estate.getArea();
-        }
+        totalArea = estateList.stream().mapToDouble(estate -> estate.getArea()).sum();
         return totalArea / estateList.size() ;
     }
 

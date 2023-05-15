@@ -22,6 +22,7 @@ public class UI {
         System.out.println("Average square meters of summer houses: " + estateService.getAverageAreaByType("SummerHouse"));
         System.out.println("Average square meters of all houses: " + estateService.getAverageArea());
         System.out.println("----------------------------------------------");
+
         List<Estate> filteredHouses = estateService.filterByRoomAndLivingRoom(estateList,4, 2);
         System.out.println("Houses with 4 rooms and 2 living rooms:");
         for (Estate estate : filteredHouses) {
