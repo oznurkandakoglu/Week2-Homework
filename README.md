@@ -16,6 +16,14 @@
 
 ### Output
 
+<img width="446" alt="Ekran Resmi 2023-05-15 23 44 21" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/339a7eee-802c-4de9-9434-6e3d841dced0">
 
-<img width="406" alt="Ekran Resmi 2023-05-15 21 35 59" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/1db58035-9b5d-45b8-bf35-a297ba5efebb">
 
+
+<img width="441" alt="Ekran Resmi 2023-05-15 23 45 24" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/b8adaf8a-996a-440d-a80d-4764920ede90">
+<img width="450" alt="Ekran Resmi 2023-05-15 23 45 33" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/3d60d4da-99f7-46a8-a592-de5eabe83d73">
+
+<img width="449" alt="Ekran Resmi 2023-05-15 23 44 36" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/6b97086e-f751-4f10-ae59-bde592aadc20">
+
+
+<img width="443" alt="Ekran Resmi 2023-05-15 23 44 53" src="https://github.com/oznurkandakoglu/Week2-Homework/assets/73194842/de036484-8788-4609-a703-1a66358c2b2f">
