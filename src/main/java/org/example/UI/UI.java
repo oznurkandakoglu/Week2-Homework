@@ -20,55 +20,21 @@ public class UI {
         Scanner input = new Scanner(System.in);
         int selected;
         selected = input.nextInt();
-    while(selected < 6){
+    while(true){
         switch (selected){
 
             case 1:
                 System.out.println("-HOUSE LIST-");
-                for (Estate estate : estateService.getListByType(estateList, "House")) {
-
-                    System.out.println("-----------------------------------------------------");
-                    System.out.println("Price : $" + estate.getPrice());
-                    System.out.println("Square Meter : " + estate.getArea());
-                    System.out.println("Room Count : " + estate.getRoomCount());
-                    System.out.println("Living Room Count : " + estate.getLivingRoomCount());
-                }
-                System.out.println("-----------------------------------------------------");
-                System.out.println("Total price of houses: $" + estateService.getTotalPriceByType("House"));
-                System.out.println("Average square meters of houses: " + estateService.getAverageAreaByType("House"));
-                System.out.println("-----------------------------------------------------");
+                printCase(estateService, estateList, "House");
 
                 break;
             case 2:
                 System.out.println("-SUMMERHOUSE LIST-");
-                for (Estate estate : estateService.getListByType(estateList, "SummerHouse")) {
-
-                    System.out.println("-----------------------------------------------------");
-                    System.out.println("Price : $" + estate.getPrice());
-                    System.out.println("Square Meter : " + estate.getArea());
-                    System.out.println("Room Count : " + estate.getRoomCount());
-                    System.out.println("Living Room Count : " + estate.getLivingRoomCount());
-                }
-                System.out.println("-----------------------------------------------------");
-                System.out.println("Total price of summerhouses: $" + estateService.getTotalPriceByType("SummerHouse"));
-                System.out.println("Average square meters of summerhouses: " + estateService.getAverageAreaByType("SummerHouse"));
-                System.out.println("-----------------------------------------------------");
-
+                printCase(estateService, estateList, "SummerHouse");
                 break;
             case 3:
                 System.out.println("-VILLA LIST-");
-                for (Estate estate : estateService.getListByType(estateList, "Villa")) {
-
-                    System.out.println("-----------------------------------------------------");
-                    System.out.println("Price : $" + estate.getPrice());
-                    System.out.println("Square Meter : " + estate.getArea());
-                    System.out.println("Room Count : " + estate.getRoomCount());
-                    System.out.println("Living Room Count : " + estate.getLivingRoomCount());
-                }
-                System.out.println("-----------------------------------------------------");
-                System.out.println("Total price of villas: $" + estateService.getTotalPriceByType("Villa"));
-                System.out.println("Average square meters of villas: " + estateService.getAverageAreaByType("Villa"));
-                System.out.println("-----------------------------------------------------");
+                printCase(estateService, estateList, "Villa");
 
                 break;
             case 4:
@@ -102,7 +68,7 @@ public class UI {
                         "\n3-Villa List" +
                         "\n4-All Houses Details" +
                         "\n5-Filter House ");
-
+                selected = input.nextInt();
                 break;
         }
         System.out.println("Please select:" +
@@ -115,8 +81,19 @@ public class UI {
         selected = input.nextInt();
     }
 
+    }
+    public void printCase(EstateService estateService, List<Estate> estateList, String type){
+        for (Estate estate : estateService.getListByType(estateList, type)) {
 
-
-
+            System.out.println("-----------------------------------------------------");
+            System.out.println("Price : $" + estate.getPrice());
+            System.out.println("Square Meter : " + estate.getArea());
+            System.out.println("Room Count : " + estate.getRoomCount());
+            System.out.println("Living Room Count : " + estate.getLivingRoomCount());
+        }
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Total price of houses: $" + estateService.getTotalPriceByType(type));
+        System.out.println("Average square meters of houses: " + estateService.getAverageAreaByType(type));
+        System.out.println("-----------------------------------------------------");
     }
 }
