@@ -14,6 +14,10 @@ public class EstateService {
         this.estateList = estateList;
     }
 
+    public <T extends Estate>List<T> getListByType(List<T> estates, String type) {
+        return estates.stream().filter(estate -> estate.getType() == type).toList();
+    }
+
     // Created get total price by type functions and return total price by type
     public double getTotalPriceByType(String type) {
         return estateList.stream().filter(estate -> estate.getType() == type).mapToDouble(estate -> estate.getPrice()).sum();
