@@ -10,7 +10,6 @@ import java.util.List;
 
 public class EstateService {
     private List<Estate> estateList;
-
     public EstateService(List<Estate> estateList) {
         this.estateList = estateList;
     }
