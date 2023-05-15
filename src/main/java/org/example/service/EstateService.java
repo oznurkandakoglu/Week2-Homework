@@ -15,6 +15,7 @@ public class EstateService {
         this.estateList = estateList;
     }
 
+    // Created get total price by type functions and return total price by type
     public double getTotalPriceByType(String type) {
         double totalPrice = 0;
 
@@ -26,6 +27,7 @@ public class EstateService {
         return totalPrice;
     }
 
+    // Created get total price functions and return total price
     public double getTotalPrice() {
         double totalPrice = 0;
         for (Estate estate : estateList) {
@@ -34,6 +36,7 @@ public class EstateService {
         return totalPrice;
     }
 
+    // Created get average area by type functions and return total area by type
     public double getAverageAreaByType(String type) {
         double totalArea = 0;
         int count = 0;
@@ -46,6 +49,7 @@ public class EstateService {
         return totalArea / count;
     }
 
+    // Created get average area functions and return total area
     public double getAverageArea() {
         double totalArea = 0;
         for (Estate estate : estateList) {
@@ -54,26 +58,9 @@ public class EstateService {
         return totalArea / estateList.size() ;
     }
 
-    public List<Estate> filterByRoomAndLivingRoom(int roomCount, int livingRoomCount) {
-        List<Estate> filteredHouses = new ArrayList<>();
-        for (Estate estate : estateList) {
-            if (estate instanceof House) {
-                House house = (House) estate;
-                if (house.getRoomCount() == roomCount && house.getLivingRoomCount() == livingRoomCount) {
-                    filteredHouses.add(house);
-                }
-            } else if (estate instanceof Villa) {
-                Villa villa = (Villa) estate;
-                if (villa.getRoomCount() == roomCount && villa.getLivingRoomCount() == livingRoomCount) {
-                    filteredHouses.add(villa);
-                }
-            } else if (estate instanceof SummerHouse) {
-                SummerHouse summerHouse = (SummerHouse) estate;
-                if (summerHouse.getRoomCount() == roomCount && summerHouse.getLivingRoomCount() == livingRoomCount) {
-                    filteredHouses.add(summerHouse);
-                }
-            }
-        }
-        return filteredHouses;
+    // Created filter by room and living room functions and return filtered house
+    public <T extends Estate>List<T> filterByRoomAndLivingRoom(List<T> houses, int roomCount, int livingRoomCount) {
+
+        return houses.stream().filter(response -> response.getRoomCount() == roomCount && response.getLivingRoomCount() == livingRoomCount).toList();
     }
 }

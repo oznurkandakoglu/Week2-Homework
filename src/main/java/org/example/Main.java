@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         List<Estate> estateList = new ArrayList<>();
 
+        // Created estate list
         estateList.add(new House(140000, 100, 1, 1));
         estateList.add(new House(160000, 120, 2, 1));
         estateList.add(new House(180000, 140, 3, 2));
@@ -23,7 +24,9 @@ public class Main {
         estateList.add(new SummerHouse(260000, 180, 4, 2));
         estateList.add(new SummerHouse(280000, 200, 4, 3));
 
+        // Crated estate service use to functions
         EstateService estateService = new EstateService(estateList);
+
 
         System.out.println("----------------------------------------------");
         System.out.println("Total price of house: $" + estateService.getTotalPriceByType("House"));
@@ -36,11 +39,11 @@ public class Main {
         System.out.println("Average square meters of summer houses: " + estateService.getAverageAreaByType("SummerHouse"));
         System.out.println("Average square meters of all houses: " + estateService.getAverageArea());
         System.out.println("----------------------------------------------");
-        List<Estate> filteredHouses = estateService.filterByRoomAndLivingRoom(4, 2);
+        List<Estate> filteredHouses = estateService.filterByRoomAndLivingRoom(estateList,4, 2);
         System.out.println("Houses with 4 rooms and 2 living rooms:");
         for (Estate estate : filteredHouses) {
             System.out.println(estate.getType() + " - $" + estate.getPrice() + " - " + estate.getArea() + " square meters");
         }
-
+//ui
     }
 }

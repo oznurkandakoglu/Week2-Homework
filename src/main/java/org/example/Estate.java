@@ -13,6 +13,7 @@ public abstract class Estate {
         this.livingRoomCount = livingRoomCount;
     }
 
+    // Created getter functions
     public double getPrice() {
         return price;
     }
